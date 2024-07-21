@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://d8kbjcu1htm7"]
+[gd_scene load_steps=15 format=3 uid="uid://d8kbjcu1htm7"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_hko3i"]
 [ext_resource type="PackedScene" uid="uid://bgyhva68bpfdb" path="res://scenes/player.tscn" id="1_ufjf1"]
 [ext_resource type="Texture2D" uid="uid://cpox176b6rso8" path="res://assets/sprites/world_tileset.png" id="2_7kdr7"]
+[ext_resource type="FontFile" uid="uid://cwyorx2nf50cc" path="res://assets/fonts/PixelOperator8.ttf" id="2_axgle"]
 [ext_resource type="PackedScene" uid="uid://cocdxpditonrs" path="res://scenes/platform.tscn" id="3_vw3qe"]
 [ext_resource type="PackedScene" uid="uid://o3sihwjaqe3w" path="res://scenes/coin.tscn" id="4_vwss2"]
 [ext_resource type="PackedScene" uid="uid://b8p4t1yfocf7" path="res://scenes/killzone.tscn" id="5_m4lbk"]
@@ -476,6 +477,15 @@ _data = {
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_hko3i")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 18.0
+offset_top = -17.0
+offset_right = 129.0
+offset_bottom = 6.0
+theme_override_fonts/font = ExtResource("2_axgle")
+theme_override_font_sizes/font_size = 8
+text = "Collected 0 coins!"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(56, 30)
