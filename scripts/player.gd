@@ -21,11 +21,21 @@ func _physics_process(delta):
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")
 	
+	# flip the sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
 	
+	if is_on_floor():
+		if direction == 0: 
+			animated_sprite.play("idle")
+		else:
+			animated_sprite.play("run")
+	else:
+		animated_sprite.play("jump")
+	
+	# apply movement 
 	if direction:
 		velocity.x = direction * SPEED
 	else:
